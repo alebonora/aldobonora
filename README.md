@@ -1,5 +1,7 @@
 # Aldo Bonora is based on Astro Starter Kit: Blog
 
+Astro front-end with Wordpress headless CMS. An experiment to learn if this could be done, how Astro works. Initial build will be to get some content related to my father's painting online.
+
 Features:
 
 - ✅ Minimal styling (make it your own!)
