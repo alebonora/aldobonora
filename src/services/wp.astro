@@ -1,0 +1,70 @@
+---
+import { GRAPHQL_URL } from './../consts';
+
+export async function getPagebyUrl(slug: any){
+	const response = await fetch(GRAPHQL_URL,
+	{
+		method: 'POST',
+		headers: {'Content-Type':'application/json'},
+		body: JSON.stringify({
+			query: `
+			query getPagebyUrl($slug: ID!){
+				post(id: $slug, idType: SLUG) {
+					id
+					databaseId
+					title
+					uri
+					slug
+					date
+					content
+					featuredImage{
+						node{
+							mediaItemUrl
+						}
+					}
+				}
+			}
+			`,
+			variables: {
+				slug: slug
+			}
+		})
+	});
+	return await response.json();
+}
+
+export async function getAllUrls(){
+	
+	const response = await fetch(GRAPHQL_URL,
+	{
+		method: 'POST',
+		headers: {'Content-Type':'application/json'},
+		body: JSON.stringify({
+			query: `
+			query GetAllUris {
+            terms {
+              nodes {
+                uri
+                slug
+              }
+            }
+            posts(first: 100) {
+              nodes {
+                uri
+                slug
+              }
+            }
+            pages(first: 100) {
+              nodes {
+                uri
+                slug
+              }
+            }
+          }
+		`
+		})
+	});	
+	const data = await response.json();
+  return data;
+}
+---
