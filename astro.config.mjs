@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import { SITE_URL } from './src/consts';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
+// import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   output: 'server',
   
-  adapter: node({
-    mode: 'standalone',
-  }),
+  // adapter: node({
+  //   mode: 'standalone',
+  // }),
 });
