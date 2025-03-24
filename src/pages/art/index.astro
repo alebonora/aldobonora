@@ -5,6 +5,8 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, GRAPHQL_URL } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+//import Image from 'astro/components/Image.astro';
+import { Image } from 'astro:assets';
 
 // const posts = (await getCollection('blog')).sort(
 // 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -165,7 +167,8 @@ const posts = await response.json();
 							<li>
 								<a href=`/art${post.uri}`>
 									{post.featuredImage &&
-										<img src={post.featuredImage.node.mediaItemUrl} alt="" />
+//										<img src={post.featuredImage.node.mediaItemUrl} alt="" /
+										<Image src={post.featuredImage.node.mediaItemUrl} width={300} height={200} alt={post.title} />
 									}
 									<h4 class="title">{post.title}</h4>
 									<p class="date" set:html={post.excerpt}></p>
