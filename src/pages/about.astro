@@ -5,6 +5,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
 
 const heroImage="/aldo-bonora-artist.jpg"
 
@@ -51,7 +52,8 @@ heroImage="/blog-placeholder-about.jpg" -->
 	<body>
 		<Header />
 		<main>
-			<p class="heroImage"><img src={heroImage}></p>
+			<p class="heroImage">
+				<Image width={450} height={300} src={heroImage} alt={"Aldo Bonora"}></Image>
 			<p>
 				The artist's work is a reflection on home. A home that sometimes exists only in memories and dreams. Born in Italy in 1938 and living abroad since his 40s, he carries within him the echoes of a land shaped by war and resilience. The rolling hills, the cypress trees standing like sentinels of time, the warm embrace of a solitary house—these are not just places, but feelings, fragments of memories, perhaps never lived, yet somehow known intimately. These are landscapes both real and imagined, a vision of the past painted not as it was, but as the heart longs for it to be.
 			</p>

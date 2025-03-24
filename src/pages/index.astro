@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
 
 const heroImage="/_MG_8122-2.jpg"
 
@@ -26,9 +27,9 @@ const heroImage="/_MG_8122-2.jpg"
 		<Header />
 		<main>
 
-			<h1>Hello, Art Lover!</h1>
-			<p class="heroImage"><img src={heroImage}></p>
+			<h1>Hello, Art Lovers!</h1>
 			<p>Welcome to the official website of <a href="/">Aldo Bonora</a>.</p>
+			<p class="heroImage"><Image width={728} height={300} src={heroImage} alt={"Something"}></p>
 
 			<!-- <p>
 				This template comes with a few integrations already configured in your
