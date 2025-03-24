@@ -11,7 +11,6 @@ export default defineConfig({
   // site: 'https://example.com',
   // integrations: [mdx(), sitemap()],
   site: SITE_URL,
-
   integrations: [mdx(), sitemap()],
   output: 'server',
   adapter: vercel(),
