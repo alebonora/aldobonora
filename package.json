@@ -13,7 +13,7 @@
     "@astrojs/node": "^9.4.1",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/vercel": "^8.0.4",
+    "@astrojs/vercel": "latest",
     "astro": "^5.16.4",
     "sharp": "^0.33.5"
   }
