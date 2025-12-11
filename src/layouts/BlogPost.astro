@@ -76,6 +76,18 @@ console.log('featuredImage:', featuredImage);
 				<div class="hero-image">
 					{featuredImage && <Image width={1020} height={510} src={featuredImage.node.mediaItemUrl} alt="" />}
 				</div>
+				<div class="hero-image">
+				{featuredImage && (
+					<img
+					src={featuredImage.node.mediaItemUrl}
+					width="1020"
+					height="510"
+					alt={featuredImage.node.altText || ''}
+					loading="lazy"
+					/>
+				)}
+				</div>
+
 				<div class="prose">
 					<div class="title">
 						<!-- <div class="date">
